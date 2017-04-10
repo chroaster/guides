@@ -224,7 +224,7 @@ test('should initially load all listings', function (assert) {
 ```
 
 Our list-filter component takes a function as an argument, used to find the list of matching rentals based on the filter string provided by the user.
-We provide an action function by setting it to our tests local scope by calling `this.on`.
+We provide an action function by setting it to our test's local scope by calling `this.on`.
 
 ```tests/integration/components/list-filter-test.js{+3,+5,+6,+13,+14,+15,+16,+17,+18,+19,+20,+21}
 import { moduleForComponent, test } from 'ember-qunit';
@@ -257,7 +257,7 @@ test('should initially load all listings', function (assert) {
 Our `filterByCity` function is going to pretend to be the action function for our component, that does the actual filtering of the rental list.
 
 If the search input is empty, the function is going to return three cities.
-If the the search input is not empty, its going to return just one.
+If the the search input is not empty, it is going to return just one.
 If our component is coded correctly, it should in turn display the three cities on initial render and just show one once a character is given to the search box.
 
 We are not testing the actual filtering of rentals in this test, since it is focused on only the capability of the component.
@@ -314,7 +314,7 @@ Ember's [wait helper](../../testing/testing-components/#toc_waiting-on-asynchron
 waits for all asynchronous tasks to complete before running the given function callback.
 It returns a promise that we also return from the test.
 
-If you return a promise from a QUnit test, The test will wait to finish until that promise is resolved.
+If you return a promise from a QUnit test, the test will wait to finish until that promise is resolved.
 In this case our test completes when the `wait` helper decides that processing is finished,
 and the function we provide that assert the resulting state is completed.
 
